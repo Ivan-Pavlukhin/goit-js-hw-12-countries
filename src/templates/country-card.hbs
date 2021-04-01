@@ -1,17 +1,17 @@
 <div class="country">
-    <p class="country-name">{{name}}</p>
+    <h2 class="country-name title">{{0.name}}</h2>
     <div class="box">
         <ul class="list-descriptions">
-            <li class="item-descriptions"><span class="name-term">Capital :</span>{{0.capital}}</li>
-            <li class="item-descriptions"><span class="name-term">Population :</span>{{0.population}}</li>
-            <li class="item-descriptions">Languages :
-                <ul>
+            <li class="item-descriptions"><span class="name-term">Capital : </span>{{0.capital}}</li>
+            <li class="item-descriptions"><span class="name-term">Population : </span>{{0.population}}</li>
+            <li class=" name-term">Languages :
+                <ul class="list-language">
                     {{#each 0.languages}}
-                    <li class="item-term">{{name}}</li>
+                    <li class="item-descriptions">{{name}}</li>
                     {{/each}}
                 </ul>
             </li>
         </ul>
-        <img src="{{0.flag}}" alt="{{0.name}}">
+        <img class="flag" src="{{0.flag}}" alt="{{0.name}}">
     </div>
 </div>

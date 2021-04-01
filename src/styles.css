@@ -22,12 +22,45 @@ body {
   margin-top: 50px;
 }
 
+.countries-box {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  display: flex;
+}
+
+.flag {
+  width: 350px;
+  margin-right: 0;
+  margin-left: auto;
+}
+
 .title {
   text-align: center;
 }
 
 .input-search-country {
   display: block;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.list-descriptions {
+  list-style-type: none;
+}
+
+.list-language {
+  list-style-type: disc;
+}
+
+.name-term {
+  font-weight: 700;
+}
+
+.item-descriptions {
+  font-weight: 500;
 }
