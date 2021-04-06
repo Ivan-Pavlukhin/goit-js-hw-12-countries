@@ -2,7 +2,7 @@ import './styles.css';
 import countryCardTpl from './templates/country-card.hbs';
 import countriesCardTpl from './templates/countries-list.hbs';
 import { registerHelper } from 'handlebars';
-import fetchCountryByName from './async-service-api';
+import fetchCountryByName from './service-api';
 import ref from './get-refs';
 import '@pnotify/core/dist/BrightTheme.css';
 const { defaults } = require('@pnotify/core');
@@ -11,16 +11,10 @@ const debounce = require('lodash.debounce');
 
 ref.input.addEventListener('input', debounce(onSearchCountryInput, 500));
 
-async function onSearchCountryInput(e) {
-  try {
-    const searchCountryName = e.target.value;
+function onSearchCountryInput(e) {
+  const searchCountryName = e.target.value;
 
-    const country = await fetchCountryByName(searchCountryName);
-    console.log(country);
-    choseRenderTpl(country);
-  } catch (error) {
-    console.log(error);
-  }
+  fetchCountryByName(searchCountryName).then(choseRenderTpl);
 }
 
 function choseRenderTpl(countries) {
